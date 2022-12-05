@@ -2,7 +2,6 @@
  
  parameter. Input n - number of elements and elements of vector from console. Print the re-
  sulting vector.
-
  Hint: To pass test in Gradescope you are expected to print elements of vector with ” ” -
  one space after each element. After the last element no need to put endl, leave it with ” ”. */
 
@@ -16,11 +15,15 @@
 using namespace std;
 
 void delete_el(vector<int> &arr) {
+    vector<int> result;
+    
     for (int i = 0; i < arr.size(); i++) {
-        if (arr[i] % 11 == 0) {
-            arr.erase(arr.begin() + i);
+        if (arr[i] % 11 != 0) {
+            result.push_back(arr[i]);
         }
     }
+    
+    arr = result;
 }
 
 using namespace std;
