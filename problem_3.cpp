@@ -17,10 +17,10 @@ double fun() {
 }
 
 void w(float &a, float &b, float &c) {
-    c = a - b;
+    c =a - b ;
 }
 
-void toNegative(float *p) {
+void toNegative(int *p) {
     *p *= -1;
 }
 
@@ -30,7 +30,7 @@ float important(float *a) {
 }
 
 int main () {
-    int x1 , x2 , x3;
+    int x1, x2, x3;
     float d;
     float arr[] = {45 ,12 ,340};
     char z = 'Y';
@@ -42,11 +42,12 @@ int main () {
     w(*(arr + 0), *(arr + 1), *(arr + 0));
 
     d = important(&*(arr + 2));
-    *(arr + 1) = d + d;
-    toNegative(&*(arr + 1));
+    x1 = d + d;
+    toNegative(&x1);
 
-    double result = (fun() + *(arr + 0) + z) / (d + *(arr + 1));
+    double result = (fun() + *(arr + 0) + z) / (d + x1);
     cout << setprecision(20) << result << endl;
+    cout << setprecision(20) << (4.34 + 33 + 89) / (45.5 - 91) << endl;
 
     return 0;
 }
